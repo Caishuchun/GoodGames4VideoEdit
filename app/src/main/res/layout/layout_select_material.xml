@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_select_material"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5">
+
+        <ImageView
+            android:id="@+id/iv_selectMaterial_cancel"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:padding="@dimen/dp_5"
+            android:src="@mipmap/delete_search" />
+
+        <TextView
+            android:id="@+id/tv_selectMaterial_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="所有照片"
+            android:textColor="@color/black_1A241F"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_selectMaterial_flag"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_2"
+            android:layout_toEndOf="@+id/tv_selectMaterial_title"
+            android:src="@mipmap/down" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_selectMaterial_all"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_selectMaterial_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="全部"
+                android:textColor="@color/black_1A241F"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:id="@+id/view_selectMaterial_all"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_2"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/black_1A241F"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_selectMaterial_video"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_selectMaterial_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="视频"
+                android:textColor="@color/black_1A241F"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:id="@+id/view_selectMaterial_video"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_2"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/black_1A241F"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_selectMaterial_picture"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_selectMaterial_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="图片"
+                android:textColor="@color/black_1A241F"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:id="@+id/view_selectMaterial_picture"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_2"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/black_1A241F"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_selectMaterial"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_selectMaterial"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white_20FFFFFF" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_selectMaterial_selected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_FFFFFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_selectMaterial_tips"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_weight="1"
+            android:textColor="@color/black_494A49"
+            android:textSize="@dimen/sp_12" />
+
+        <LinearLayout
+            android:id="@+id/tv_selectMaterial_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/dp_14"
+            android:background="@drawable/bg_only_rectangle_line_black"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingEnd="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_5"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:src="@mipmap/icon_video" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dp_5"
+                android:text="一键出片"
+                android:textColor="@color/black_1A241F"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_selectMaterial_next2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/dp_14"
+            android:background="@drawable/bg_green_btn_6"
+            android:paddingStart="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingEnd="@dimen/dp_15"
+            android:paddingBottom="@dimen/dp_5"
+            android:text="下一步"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</LinearLayout>

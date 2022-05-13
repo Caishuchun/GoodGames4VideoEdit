@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_000000"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_28"
+    tools:context=".fragment.HomeFragmentV5">
+
+    <FrameLayout
+        android:id="@+id/fl_homeV5_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/dp_80"
+            android:paddingEnd="@dimen/dp_80">
+
+            <TextView
+                android:id="@+id/tv_homeV5_all"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="全部"
+                android:textColor="@color/green_2EC8AC"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_homeV5_phone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="手游"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_homeV5_pc"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="端游"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_homeV5_search"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:paddingStart="@dimen/dp_11"
+            android:paddingTop="@dimen/dp_13"
+            android:paddingEnd="@dimen/dp_11"
+            android:paddingBottom="@dimen/dp_11"
+            android:src="@mipmap/search_white_new" />
+    </RelativeLayout>
+
+</RelativeLayout>

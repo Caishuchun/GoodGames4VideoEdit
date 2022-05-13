@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_43"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rl_my_games_pc"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_my_games_pc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/title_pc"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view_my_games_pc"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_3"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:background="@color/white_FFFFFF"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_my_games_phone"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_my_games_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/title_phone"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view_my_games_phone"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_3"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:background="@color/white_FFFFFF"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

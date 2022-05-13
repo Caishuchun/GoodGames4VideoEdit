@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_74"
+    android:layout_marginStart="@dimen/dp_16"
+    android:layout_marginEnd="@dimen/dp_16"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60">
+
+        <com.fortune.zg.widget.RoundImageView
+            android:id="@+id/iv_item_selectMoreMusic_cover"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/more_music"
+            app:radius="@dimen/dp_6"
+            app:type="round" />
+
+        <ProgressBar
+            android:id="@+id/pb_item_selectMoreMusic"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_item_selectMoreMusic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="歌名"
+            android:textColor="@color/black_1A241F"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_item_selectMoreMusic_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="歌手"
+            android:textColor="@color/black_878787"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_item_selectMoreMusic_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时长"
+            android:textColor="@color/black_878787"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_item_selectMoreMusic_fav"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:padding="@dimen/dp_5"
+        android:src="@mipmap/fav_un" />
+
+    <TextView
+        android:id="@+id/tv_item_selectMoreMusic_use"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:background="@drawable/bg_green_btn"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_5"
+        android:paddingEnd="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_5"
+        android:text="使用"
+        android:textColor="@color/white_FFFFFF"
+        android:textSize="@dimen/sp_10"
+        android:visibility="gone" />
+
+</LinearLayout>

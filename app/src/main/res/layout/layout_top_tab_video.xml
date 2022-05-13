@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_43"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rl_video_all"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_video_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="全部"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageView
+            android:id="@+id/iv_video_all_point"
+            android:layout_width="@dimen/dp_8"
+            android:layout_height="@dimen/dp_8"
+            android:layout_alignTop="@+id/tv_video_all"
+            android:layout_alignEnd="@+id/tv_video_all"
+            android:src="@drawable/point_red"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/view_video_all"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_3"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:background="@color/white_FFFFFF"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_video_phone"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_video_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="手游"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageView
+            android:id="@+id/iv_video_phone_point"
+            android:layout_width="@dimen/dp_8"
+            android:layout_height="@dimen/dp_8"
+            android:layout_alignTop="@+id/tv_video_phone"
+            android:layout_alignEnd="@+id/tv_video_phone"
+            android:src="@drawable/point_red"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/view_video_phone"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_3"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:background="@color/white_FFFFFF"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_video_pc"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_video_pc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="端游"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageView
+            android:id="@+id/iv_video_pc_point"
+            android:layout_width="@dimen/dp_8"
+            android:layout_height="@dimen/dp_8"
+            android:layout_alignTop="@+id/tv_video_pc"
+            android:layout_alignEnd="@+id/tv_video_pc"
+            android:src="@drawable/point_red"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/view_video_pc"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_3"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:background="@color/white_FFFFFF"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

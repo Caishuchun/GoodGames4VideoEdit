@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:descendantFocusability="afterDescendants">
+
+    <FrameLayout
+        android:id="@+id/surface_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true">
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:background="#000000"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:id="@+id/start_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/start"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:visibility="invisible"
+            android:src="@drawable/video_play" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:background="@drawable/jz_bottom_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_12" />
+
+        <SeekBar
+            android:id="@+id/bottom_seek_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@null"
+            android:max="100"
+            android:maxHeight="@dimen/dp_1"
+            android:minHeight="@dimen/dp_1"
+            android:paddingStart="@dimen/dp_12"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingEnd="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_8"
+            android:progressDrawable="@drawable/seek_bar_bg"
+            android:thumb="@drawable/seek_bar_thumb" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_12" />
+
+        <ImageView
+            android:id="@+id/fullscreen"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_10"
+            android:scaleType="centerInside"
+            android:src="@drawable/jz_enlarge"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="@dimen/jz_start_button_w_h_normal"
+        android:layout_height="@dimen/jz_start_button_w_h_normal"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:indeterminateDrawable="@drawable/jz_loading"
+        android:visibility="gone" />
+
+    <com.fortune.zg.widget.VideoLoadingView
+        android:id="@+id/video_loading"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_alignParentBottom="true" />
+
+    <ProgressBar
+        android:id="@+id/pb_video"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_alignParentBottom="true"
+        android:max="100"
+        android:progressDrawable="@drawable/bg_progress_white" />
+
+    <ImageView
+        android:id="@+id/iv_video_play"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:layout_centerInParent="true"
+        android:src="@drawable/video_play"
+        android:visibility="gone" />
+
+</RelativeLayout>

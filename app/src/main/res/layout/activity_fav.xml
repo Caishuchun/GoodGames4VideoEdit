@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.FavActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_131"
+        android:background="@mipmap/bg_main_top"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_fav_back"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_32"
+            android:padding="@dimen/dp_16"
+            android:src="@mipmap/back_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_48"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:text="@string/look_his"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+
+        <com.fortune.zg.widget.TopTab4Fav
+            android:id="@+id/tt_fav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_fav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

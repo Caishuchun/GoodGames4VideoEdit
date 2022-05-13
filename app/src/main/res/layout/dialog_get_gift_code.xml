@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_260"
+        android:layout_height="@dimen/dp_260"
+        android:background="@mipmap/bg_get_gift_code">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_65"
+            android:text="@string/gift_code"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+
+        <com.fortune.zg.widget.ChangeTextViewSpace
+            android:id="@+id/tv_get_gift_code_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_140"
+            android:textColor="@color/yellow_FEFFD3"
+            android:textSize="@dimen/sp_28"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view_get_gift_code_sure"
+            android:layout_width="@dimen/dp_135"
+            android:layout_height="@dimen/dp_45"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_login"
+    android:orientation="vertical"
+    tools:context=".fragment.LoginSecondFragment">
+
+    <ImageView
+        android:id="@+id/iv_login_second_back"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginStart="@dimen/dp_42"
+        android:layout_marginTop="@dimen/dp_48"
+        android:src="@mipmap/login_back" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_24"
+        android:text="@string/please_enter_code"
+        android:textColor="@color/white_FFFFFF"
+        android:textSize="@dimen/sp_18" />
+
+    <TextView
+        android:id="@+id/tv_login_second_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="@string/send_to"
+        android:textColor="@color/white_FFFFFF"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70"
+        android:layout_marginTop="@dimen/dp_110">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_code_1"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_64"
+                android:background="@drawable/bg_code_enter"
+                android:gravity="center"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_24" />
+
+            <TextView
+                android:id="@+id/tv_code_2"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_64"
+                android:layout_marginStart="@dimen/dp_6"
+                android:background="@drawable/bg_code_enter_un"
+                android:gravity="center"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_24" />
+
+            <TextView
+                android:id="@+id/tv_code_3"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_64"
+                android:layout_marginStart="@dimen/dp_6"
+                android:background="@drawable/bg_code_enter_un"
+                android:gravity="center"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_24" />
+
+            <TextView
+                android:id="@+id/tv_code_4"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_64"
+                android:layout_marginStart="@dimen/dp_6"
+                android:background="@drawable/bg_code_enter_un"
+                android:gravity="center"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_24" />
+
+            <TextView
+                android:id="@+id/tv_code_5"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_64"
+                android:layout_marginStart="@dimen/dp_6"
+                android:background="@drawable/bg_code_enter_un"
+                android:gravity="center"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_24" />
+
+            <TextView
+                android:id="@+id/tv_code_6"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_64"
+                android:layout_marginStart="@dimen/dp_6"
+                android:background="@drawable/bg_code_enter_un"
+                android:gravity="center"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_24" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_login_second_code"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="bottom|end"
+            android:inputType="number"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:textColor="@color/color_transparent"
+            android:textSize="@dimen/dp_0_1" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_login_second_reSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_21"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/resend"
+        android:textColor="@color/white_FFFFFF"
+        android:textSize="@dimen/sp_14" />
+</LinearLayout>

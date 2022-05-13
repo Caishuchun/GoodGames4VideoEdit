@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 进度条背景样式 -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@color/blue_4F6CED" />
+            <corners android:radius="@dimen/dp_8" />
+        </shape>
+    </item>
+
+    <!-- 进度条样式 -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <corners android:radius="@dimen/dp_8" />
+                <gradient
+                    android:endColor="@color/blue_4F6CED"
+                    android:startColor="@color/blue_769CF8" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

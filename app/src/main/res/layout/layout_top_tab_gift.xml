@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_36"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rl_top_dailyCheck"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_gift_item_selected">
+
+        <TextView
+            android:id="@+id/tv_top_dailyCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/daily_check"
+            android:textColor="@color/green_63C5AD"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view_top_dailyCheck"
+            android:layout_width="@dimen/dp_6"
+            android:layout_height="@dimen/dp_6"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/point_red"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_top_whitePiao"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_weight="1"
+        android:background="@drawable/bg_gift_item_unselect">
+
+        <TextView
+            android:id="@+id/tv_top_whitePiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/limit_white_piao"
+            android:textColor="@color/black_1A241F"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view_top_whitePiao"
+            android:layout_width="@dimen/dp_6"
+            android:layout_height="@dimen/dp_6"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/point_red"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_top_inviteGift"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_gift_item_unselect">
+
+        <TextView
+            android:id="@+id/tv_top_inviteGift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/invite_gift"
+            android:textColor="@color/black_1A241F"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view_top_inviteGift"
+            android:layout_width="@dimen/dp_6"
+            android:layout_height="@dimen/dp_6"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/point_red"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

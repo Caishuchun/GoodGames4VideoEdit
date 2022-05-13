@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_bottomTab_bg"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:background="@color/black_000000"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_bottomTab_home"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="首页"
+        android:textColor="@color/gray_9F9F9F"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_bottomTab_phone"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="手游"
+        android:textColor="@color/gray_9F9F9F"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bottomTab_issueVideo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/issue_video" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_bottomTab_pc"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="端游"
+        android:textColor="@color/gray_9F9F9F"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_bottomTab_mine"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="我的"
+        android:textColor="@color/gray_9F9F9F"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold" />
+
+</LinearLayout>

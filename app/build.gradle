@@ -1,0 +1,185 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.fortune.zg"
+        minSdkVersion 24
+        targetSdkVersion 29
+        versionCode 20220428
+        versionName "5.5.0"
+        multiDexEnabled true
+        aaptOptions {
+            cruncherEnabled = false
+            useNewCruncher = false
+        }
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            //热修复支持五种
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a'
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //使用renderscript 兼容包
+        renderscriptTargetApi 25
+        renderscriptSupportModeEnabled true
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "hfdd_${releaseTime()}_${versionName.replace(".", "")}.apk"
+                }
+            }
+        }
+    }
+
+    // 签名信息
+    signingConfigs {
+        debug {
+            storeFile file('hfdd.jks')
+            storePassword 'hfdd123'
+            keyAlias 'key0'
+            keyPassword 'hfdd123'
+        }
+        release {
+            storeFile file('hfdd.jks')
+            storePassword 'hfdd123'
+            keyAlias 'key0'
+            keyPassword 'hfdd123'
+        }
+    }
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+static def releaseTime() {
+    return new Date().format("yyyyMMddHHmm", TimeZone.getDefault())
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':picture_library')
+    implementation project(':proxylib')
+    //阿里云一键登录
+    implementation files('libs/crashshield-2.0.3-release.aar')
+    implementation files('libs/logger-2.0.3-release.aar')
+    implementation files('libs/main-2.0.3-release.aar')
+    implementation files('libs/phoneNumber-L-AuthSDK-2.12.1.aar')
+    implementation files('libs/isoparser-1.0.6.jar')
+    implementation files('libs/aspectjrt-1.7.3.jar')
+    //七牛直播
+    implementation files('libs/pldroid-player-2.2.2.jar')
+    //七牛聊天室
+    implementation files('libs/qndroid-imsdk-1.0.0.aar')
+
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    /*Retrofit*/
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    /*gson*/
+    implementation 'com.google.code.gson:gson:2.8.5'
+    /*rxJava*/
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.15'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.2.0'
+    /*glide*/
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+    /*下拉刷新,上拉加载*/
+    //核心必须依赖
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
+    //谷歌刷新头
+    implementation 'com.scwang.smart:refresh-header-material:2.0.3'
+    //经典加载
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    /*eventBus*/
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    /*时间选择器*/
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    /*logger*/
+    implementation 'com.orhanobut:logger:2.2.0'
+    /*流式布局*/
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+    // room
+    implementation "androidx.room:room-runtime:2.2.6"
+    kapt "androidx.room:room-compiler:2.2.6"
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:2.2.6"
+    //饺子视频播放器
+    implementation 'cn.jzvd:jiaozivideoplayer:7.6.0'
+    //阿里云推送
+    implementation 'com.aliyun.ams:alicloud-android-push:3.3.0'
+    implementation 'com.aliyun.ams:alicloud-android-third-push:3.3.0'
+    //华为依赖
+    compile 'com.aliyun.ams:alicloud-android-third-push-huawei:3.3.0'
+    //小米依赖
+    compile 'com.aliyun.ams:alicloud-android-third-push-xiaomi:3.3.0'
+    //OPPO依赖
+    compile 'com.aliyun.ams:alicloud-android-third-push-oppo:3.3.0'
+    //vivo依赖
+    compile 'com.aliyun.ams:alicloud-android-third-push-vivo:3.3.0'
+    //阿里云热修复
+    implementation 'com.aliyun.ams:alicloud-android-hotfix:3.2.18'
+    //微信分享
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    implementation 'com.tencent.tauth:qqopensdk:3.52.0'
+    //文件下载
+    implementation 'com.arialyy.aria:core:3.8.12'
+    annotationProcessor 'com.arialyy.aria:compiler:3.8.12'
+    // 友盟统计SDK
+    implementation 'com.umeng.umsdk:common:9.4.0'// 必选
+    implementation 'com.umeng.umsdk:asms:1.2.3'// 必选
+    implementation 'com.umeng.umsdk:apm:1.3.1'
+    //弹幕
+    implementation 'com.github.ctiao:DanmakuFlameMaster:0.9.25'
+    implementation 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
+    //图片压缩
+    implementation 'top.zibin:Luban:1.1.8'
+    //FFmpeg
+    implementation 'com.github.microshow:RxFFmpeg:4.9.0'
+    //权限申请
+    implementation 'me.weyye.hipermission:library:1.0.7'
+    implementation 'com.arthenica:mobile-ffmpeg-full:4.4'
+}

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_70"
+    android:background="@color/color_transparent"
+    android:orientation="horizontal">
+
+    <View
+        android:id="@+id/view_bottomTabV5_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black_000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_bottomTabV5_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/rl_bottomTabV5_home_normal"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_20">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:src="@mipmap/home_normal" />
+
+                <ImageView
+                    android:id="@+id/iv_bottomTabV5_home_normal"
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_8"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/point_red"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_bottomTabV5_home_focus"
+                android:layout_width="@dimen/dp_42"
+                android:layout_height="@dimen/dp_42"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_42"
+                    android:layout_height="@dimen/dp_42"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/home_focus" />
+
+                <ImageView
+                    android:id="@+id/iv_bottomTabV5_home_focus"
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    android:src="@drawable/point_red"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_bottomTabV5_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:text="@string/title_home"
+                android:textColor="@color/black_878787"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_bottomTabV5_phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_bottomTabV5_phone_normal"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_20"
+                android:src="@mipmap/phone_normal" />
+
+            <ImageView
+                android:id="@+id/iv_bottomTabV5_phone_focus"
+                android:layout_width="@dimen/dp_42"
+                android:layout_height="@dimen/dp_42"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/phone_focus"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_bottomTabV5_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:text="@string/title_phone"
+                android:textColor="@color/black_878787"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_bottomTabV5_issue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_bottomTabV5_issue_focus"
+                android:layout_width="@dimen/dp_55"
+                android:layout_height="@dimen/dp_55"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:src="@mipmap/issue_video"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_bottomTabV5_pc"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_bottomTabV5_pc_normal"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_20"
+                android:src="@mipmap/pc_normal" />
+
+            <ImageView
+                android:id="@+id/iv_bottomTabV5_pc_focus"
+                android:layout_width="@dimen/dp_42"
+                android:layout_height="@dimen/dp_42"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/pc_focus"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_bottomTabV5_pc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:text="@string/title_pc"
+                android:textColor="@color/black_878787"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_bottomTabV5_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_bottomTabV5_mine_normal"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_20"
+                android:src="@mipmap/tab_mine_uncheck" />
+
+
+            <ImageView
+                android:id="@+id/iv_bottomTabV5_mine_focus"
+                android:layout_width="@dimen/dp_42"
+                android:layout_height="@dimen/dp_42"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/tab_mine_check"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_bottomTabV5_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:text="我的"
+                android:textColor="@color/black_878787"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

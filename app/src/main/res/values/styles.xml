@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/gray_F7F7F7</item>
+        <item name="colorAccent">@color/green_56A793</item>
+    </style>
+
+    <!--界面主题样式-->
+    <style name="NormalTheme" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="TranslucentTheme" parent="NormalTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/color_transparent</item>
+    </style>
+
+    <!--弹出框dialog样式-->
+    <style name="BottomDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景遮罩层 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <!-- 等待对话框样式 -->
+    <style name="new_circle_progress" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景遮罩层 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="dialog_anim">
+        <item name="android:windowEnterAnimation">@anim/dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out_anim</item>
+    </style>
+
+    <!-- 等待对话框样式 -->
+    <style name="BeautifulDialog" parent="new_circle_progress">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!--单选选择框-->
+    <style name="CheckBoxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/bg_checkbox</item>
+    </style>
+
+    <!--小白圆进度条-->
+    <style name="SmallCircleProgressTheme">
+        <item name="minWidth">@dimen/dp_20</item>
+        <item name="minHeight">@dimen/dp_20</item>
+        <item name="maxWidth">@dimen/dp_20</item>
+        <item name="maxHeight">@dimen/dp_20</item>
+    </style>
+
+    <!--加载进度条-->
+    <style name="LoadingView">
+        <item name="minWidth">@dimen/dp_48</item>
+        <item name="maxWidth">@dimen/dp_48</item>
+        <item name="minHeight">@dimen/dp_48</item>
+        <item name="maxHeight">@dimen/dp_48</item>
+        <item name="indicatorName">BallPulseIndicator</item>
+    </style>
+
+    <!--popupwindow动画-->
+    <style name="style_pop_animation">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_out</item>
+    </style>
+
+    <!--自定义seekbarstyle-->
+    <style name="CustomSeekbarStyle">
+        <item name="android:maxHeight">@dimen/dp_2_5</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@color/colorAccent</item>
+        <item name="android:progressDrawable">@drawable/seekbar_progress_drawable</item>
+        <item name="android:minHeight">@dimen/dp_2_5</item>
+        <item name="android:thumb">@drawable/seekbar_thumb</item>
+    </style>
+
+    <style name="PermissionStyle" parent="PermissionDefaultNormalStyle">
+        <item name="PermissionTitleColor">@color/black_1A241F</item>
+        <item name="PermissionMsgColor">@color/black_494A49</item>
+        <item name="PermissionItemTextColor">@color/black_1A241F</item>
+        <item name="PermissionButtonTextColor">@color/white_FFFFFF</item>
+        <item name="PermissionButtonBackground">@drawable/bg_green_btn_6</item>
+    </style>
+</resources>

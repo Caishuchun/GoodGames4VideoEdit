@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.UserDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_230"
+        android:background="@mipmap/bg_me"
+        android:orientation="vertical"
+        android:scaleType="centerCrop">
+
+        <ImageView
+            android:id="@+id/iv_userDetail_back"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_28"
+            android:padding="@dimen/dp_16"
+            android:src="@mipmap/back_white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.fortune.zg.widget.RoundImageView
+                android:id="@+id/riv_userDetail_head"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
+                android:layout_marginStart="@dimen/dp_16"
+                android:src="@mipmap/icon"
+                app:type="circle" />
+
+            <TextView
+                android:id="@+id/tv_userDetail_focus"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_20"
+                android:background="@drawable/bg_focus_un"
+                android:gravity="center"
+                android:padding="@dimen/dp_2"
+                android:text="＋ 关注"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_userDetail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="userName"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_userDetail_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:gravity="center"
+            android:text="这个人很懒,没有设置自己的简介"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_10" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_userDetail_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 获赞"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_12"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_userDetail_focuses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:text="0 关注"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_12"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_userDetail_fans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 粉丝"
+                android:textColor="@color/white_FFFFFF"
+                android:textSize="@dimen/sp_12"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_userDetail_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_userDetail_noVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="ta没有发布过视频..."
+            android:textColor="@color/black_1A241F"
+            android:textSize="@dimen/sp_14"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

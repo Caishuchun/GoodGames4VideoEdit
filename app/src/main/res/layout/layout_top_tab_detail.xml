@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_43"
+    android:background="@color/green_63C5AD"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rl_top_game"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_top_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/game"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view_top_game"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_2"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:background="@color/white_FFFFFF"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_top_update"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_top_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/update"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view_top_update"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_2"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:background="@color/white_FFFFFF"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_top_detail"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_top_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/detail"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view_top_detail"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_2"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:background="@color/white_FFFFFF"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_top_common"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_top_common"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/common"
+            android:textColor="@color/white_FFFFFF"
+            android:textSize="@dimen/sp_14" />
+
+        <View
+            android:id="@+id/view_top_common"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_2"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:background="@color/white_FFFFFF"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+
+</LinearLayout>

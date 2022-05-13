@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.fortune.zg.widget.JzvdStdRound
+        android:id="@+id/video_detail_video"
+        android:layout_width="@dimen/dp_205"
+        android:layout_height="@dimen/dp_159"
+        android:layout_marginEnd="@dimen/dp_4"
+        app:JzvdRadius="@dimen/dp_6" />
+
+</FrameLayout>

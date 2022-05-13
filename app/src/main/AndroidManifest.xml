@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.fortune.zg">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" /> <!-- 获取机型信息权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.ACCESS_FIND_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" /> <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".myapp.SophixStubApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="true"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:theme="@style/NormalTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="LockedOrientationActivity,UnusedAttribute"
+        tools:replace="android:theme,android:icon">
+        <activity
+            android:name=".plugin.ProxyActivity"
+            android:process=":chirstmas"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".issue.VideoMainActivity"
+            android:windowSoftInputMode="stateVisible|adjustPan"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".service.DeleteFileIntentService"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.FansAndFollowListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".issue.MakeVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".issue.PreviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UserDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DownloadActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FavActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.JumpActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="share"
+                    android:scheme="hfdd" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".video.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing|stateHidden" />
+        <activity
+            android:name=".activity.SelectMvCoverActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.IssueMvActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.IssueMvHisActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LiveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".activity.ReplayCommonActivityV4"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CommentDetailActivityV4"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PicListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.GiftActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ShowPicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.GameDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SearchGameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChangePhone2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChangePhone1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AccountSafeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LookHisActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UserInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="um.60150d9f6a2a470e8f981910" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivityV5"
+            android:screenOrientation="portrait" /> <!-- 全面屏 vivo/oppo o版本刘海屏配置项 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.6" /> <!-- 刘海屏华为o版本配置，如果不配置则不使用华为o系统刘海区域 -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" /> <!-- 刘海屏小米o版本配置，如果不配置则不使用小米o系统刘海区域 -->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.fortune.zg.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"
+                tools:replace="android:resource" />
+        </provider> <!-- 阿里云推送 -->
+        <meta-data
+            android:name="com.alibaba.app.appkey"
+            android:value="333412130" />
+        <meta-data
+            android:name="com.alibaba.app.appsecret"
+            android:value="f30c4e3f29c44f21a10c628ef306d639" />
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="appid=104173175" />
+        <meta-data
+            android:name="com.vivo.push.api_key"
+            android:value="d3c5bcc5fa6b1b9a12a14f19fc1178e3" />
+        <meta-data
+            android:name="com.vivo.push.app_id"
+            android:value="105476823" /> <!-- 阿里云热修复 -->
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="333412130" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="f30c4e3f29c44f21a10c628ef306d639" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDooqz3obwEyRaYfQGvNxVMG8zFz96cpifx2nDyMwoNf767JvOgy1x6WQsXZghpl31A6odNQp5eVM70iH8j5j5BXCSSM8jzdFv9/OF9vaf8NLfIxMWC1+NwgNPwX4QfwgM96kcJxtC9N75M03ta1UYVTSV9R2ZsjjfQwGaojDap36UZ/MpHGV6dTqXUJrg6cvPUtq68FNS5Yl6uyjNCmmNQeecEZTErZBdJXIB9oso/zvf0+0/X6acHEy94A//LhuVz++kksGjOp5dsm65KXiXP5A4aHWw1OG8ep0S012zhNVatuZl5JxBKuVvsXCZXCqQ+cIwnqDrFM8BsvBimO6MnAgMBAAECggEAbIj5Cc97WQA4eoxX7NdWKFwP/Xot8gfTOxMe/uCxH/spkUdrAuneC3bfpdsEsb7rwQ2qcnFSUdBffdbw+l7BTN0gctWWO39eK/F/gpqpdRFjbVfgjlsK0cJJHyxxCCAMQya6XeVUHfOT5WQFeStntyh3BSv6rUrs34fkXV6NYlMBaxZ7aTsf95LtrxckvXhDeXG43zAcRyhea3JUp15ot/O6CuF3sgEIqrwnH6SauLoPZyXdOpI8YzWq97DZs8URhDKbLC574YybpwjRKJKknAGay+lWD7ShWrh0xmtC9S65jDtr/O/C5SAY79xzprZpagkPYlwCzsjkJNCbvieWAQKBgQD8lvH80rNt29Wn0hPkueuhLLl4ljEyC1cz2Ipj2xbpQ8STKNM7GR/ReAXu90EWc5mQpaGTk8vVSLmQNQTf4ZUgdQ5lJ6cGG/WDlTdDSaAQF6sCQ27nAmH6QkGLpMYRMwj5sYSIj+rZUl91TK8XCdHvMa4ZEoljUJ3+tqH5z0f5FwKBgQDrxsKtTm60c1lVVX2x+R5sXMsXMgElGOfjiZ377qelRBBnj8khtrKzkUOqEzXxtcwKu4wRdjj0hyQNiLEDebH1rh1YU8NBm/wueBu+DBjvJmvCt28j3fNiHJ3bXcPZmanC+NEP50LqCRI/cL6UTHeq/76eqIQ1AQMttA2GAAzQcQKBgFHJ+r935nvLNEqsHp7wiNjep4vhbjqbK3hxRJaC6c9Mj0lrbcJ0JzZnm9w+GchQVEhfKYukztrYOqX0VQi9fdFNtgSRK2cyBHTAC23xWC/9yfToqu+IePtVGu5Bw5TsJprbnWOu3kfSgXB1DTjziBPgzVP3CZ+sCgzhTF+ce9yvAoGBANEHN9TZ8j+8+/gxgOxmBdjgM5Vu2aEAAaWyfgO6w5o7S6fky9Y92RRltu1zdqHCIRFq0HUysK/pl8b/5p9EJse/A3kpWbQzDFJOXZoRs5FiKKtKYRgVUA8te63d5SJnnx+h5AcLakF+pVTlKbDkUjuh3Gdg00UCjsTYGh0wsiuhAoGBALmbLSBLdx+DKtCBgbJ9WquUjCxNxKVrzJ2/jjN1ureqgDYUuF9nkfNNHV/aJEY7nBgTNbKUZTgDLcxn3GHkqZrPJQYHX6+sI9Wvp3wDEnlGvYsExTg7zidu6s2BgD/7RE88D5XDbID3AauaxuIIrd/YBM+7OpGwtP8FWwXh0GFw" /> <!-- 推送Receiver -->
+        <receiver
+            android:name=".receiver.MyMessageReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.sdk.android.push.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".service.MyMessageIntentService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.sdk.android.push.RECEIVE" />
+            </intent-filter>
+        </service> <!-- 分享 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent101927423" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- 阿里云一键登录 -->
+        <!-- 联通电信授权页 -->
+        <activity
+            android:name="com.mobile.auth.gatewayauth.LoginAuthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:launchMode="singleTop" /> <!-- 协议页面webview -->
+        <activity
+            android:name="com.mobile.auth.gatewayauth.activity.AuthWebVeiwActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind" /> <!-- 移动授权页 -->
+        <activity
+            android:name="com.cmic.sso.sdk.activity.LoginAuthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:launchMode="singleTop" />
+    </application>
+
+</manifest>

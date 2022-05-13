@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/gray_C4C4C4" />
+            <corners android:radius="@dimen/dp_6" />
+        </shape>
+    </item>
+    <item android:top="@dimen/dp_22">
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="@dimen/dp_2"
+                android:color="@color/gray_C4C4C4" />
+            <corners
+                android:bottomLeftRadius="@dimen/dp_6"
+                android:bottomRightRadius="@dimen/dp_6" />
+            <solid android:color="@color/white_FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

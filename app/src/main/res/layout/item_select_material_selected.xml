@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dp_60"
+    android:layout_height="@dimen/dp_60"
+    android:layout_marginStart="@dimen/dp_5"
+    android:layout_marginTop="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    app:layout_goneMarginBottom="@dimen/dp_10">
+
+    <com.fortune.zg.widget.RoundImageView
+        app:type="round"
+        app:radius="@dimen/dp_3"
+        android:id="@+id/iv_item_selected_picture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:scaleType="centerCrop" />
+
+
+    <ImageView
+        android:id="@+id/iv_item_selected_delete"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:layout_alignParentEnd="true"
+        android:background="@color/black_20000000"
+        android:padding="@dimen/dp_5"
+        android:src="@mipmap/delete_selected" />
+
+
+    <TextView
+        android:id="@+id/tv_item_selected_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dp_5"
+        android:background="@drawable/bg_black_shape_round6"
+        android:paddingStart="@dimen/dp_4"
+        android:paddingEnd="@dimen/dp_4"
+        android:textColor="@color/white_FFFFFF"
+        android:textSize="@dimen/sp_10"
+        android:visibility="gone" />
+
+</RelativeLayout>
