@@ -2,6 +2,7 @@ package com.fortune.zg.issue
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.graphics.Bitmap
 import android.graphics.Typeface
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -11,6 +12,10 @@ import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.OrientationHelper
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.SimpleTarget
+import com.bumptech.glide.request.transition.Transition
 import com.fortune.zg.R
 import com.fortune.zg.adapter.BaseAdapterWithPosition
 import com.fortune.zg.utils.InputTextDialog
@@ -20,6 +25,7 @@ import com.fortune.zg.widget.SafeLinearLayoutManager
 import com.google.gson.Gson
 import com.jakewharton.rxbinding2.view.RxView
 import kotlinx.android.synthetic.main.item_cut_pic.view.*
+import kotlinx.android.synthetic.main.item_video_cut_pic.view.*
 import kotlinx.android.synthetic.main.layout_select_text.*
 import java.util.concurrent.TimeUnit
 
@@ -33,7 +39,12 @@ object AddTextUtil {
 
     private var tempData = mutableListOf<MediaData>()
     private var mAdapter4OnlyPic: BaseAdapterWithPosition<MediaData>? = null
+    private var mAdapter4Pic: BaseAdapterWithPosition<Bitmap>? = null
     private var mDrawView: DragView? = null
+
+    private var picIndex = 0
+    private var MAX_PIC = 10
+    private var picBitmapLists = mutableListOf<Bitmap>()
 
     /**
      * 取消选择弹框
@@ -83,8 +94,9 @@ object AddTextUtil {
             }
             1 -> {
                 mDialog?.rv_selectText_pic?.visibility = View.VISIBLE
-                mDialog?.cutVideoView_selectText?.visibility = View.VISIBLE
+                mDialog?.cutVideoView_selectText?.visibility = View.GONE
                 mDialog?.rv_selectText_onlyPic?.visibility = View.GONE
+                initRecyclerView(context, type)
             }
             else -> {
             }
@@ -94,7 +106,7 @@ object AddTextUtil {
             RxView.clicks(it)
                 .throttleFirst(200, TimeUnit.MILLISECONDS)
                 .subscribe {
-                    addText(context)
+                    addText(context,type)
                 }
         }
 
@@ -102,10 +114,6 @@ object AddTextUtil {
             RxView.clicks(it)
                 .throttleFirst(200, TimeUnit.MILLISECONDS)
                 .subscribe {
-//                    val needClear = editTextList
-//                    needClear.removeAll(oldEditTextList)
-//                    editTextList.removeAll(needClear)
-//                    mDrawView?.removeAll(needClear)
                     editTextList.clear()
                     mDrawView?.removeAll()
                     listener.cancel(type)
@@ -188,21 +196,34 @@ object AddTextUtil {
     /**
      * 添加文字
      */
-    private fun addText(context: AppCompatActivity) {
+    private fun addText(context: AppCompatActivity,type: Int) {
         val et = ScaleEditText(context)
         currentEditText = et
         editTextList.add(et)
-        currentEditText?.setPage(0)
-        for (index in 0 until tempData.size) {
-            tempData[index].isSelected = index != 0
-        }
-        mAdapter4OnlyPic?.notifyDataSetChanged()
         mDrawView?.addDragView(
             et,
             500, mDrawView?.height!! / 2 - 100, 900, mDrawView?.height!! / 2 + 100, true, true
         )
         toSelectTextColor(context)
         toSelectTextFont(context)
+        when(type){
+            0->{
+                currentEditText?.setPage(0)
+                for (index in 0 until tempData.size) {
+                    tempData[index].isSelected = index != 0
+                }
+                mAdapter4OnlyPic?.notifyDataSetChanged()
+            }
+            1->{
+                //TODO 笑口常开好彩自然来
+                currentEditText?.setInterval("0_0")
+                mDialog?.cutVideoView_selectText?.visibility = View.VISIBLE
+                mDialog?.cutVideoView_selectText?.setDuration(tempData[0].duration!!)
+                mDialog?.cutVideoView_selectText?.setStart(0L)
+                mDialog?.cutVideoView_selectText?.setEnd(tempData[0].duration!!)
+                mDialog?.cutVideoView_selectText?.setType(CutVideoView.CutVideoType.CUT_VIDEO)
+            }
+        }
     }
 
     /**
@@ -266,8 +287,74 @@ object AddTextUtil {
                 mDialog?.rv_selectText_onlyPic?.layoutManager =
                     SafeLinearLayoutManager(context, OrientationHelper.HORIZONTAL)
             }
+            1 -> {
+                mAdapter4Pic = BaseAdapterWithPosition.Builder<Bitmap>()
+                    .setLayoutId(R.layout.item_video_cut_pic)
+                    .setData(picBitmapLists)
+                    .addBindView { itemView, itemData, position ->
+                        Glide.with(context)
+                            .load(itemData)
+                            .into(itemView.iv_item_videoCut_pic)
+                    }
+                    .create()
+                mDialog?.rv_selectText_pic?.adapter = mAdapter4Pic
+                mDialog?.rv_selectText_pic?.layoutManager =
+                    SafeLinearLayoutManager(context, OrientationHelper.HORIZONTAL)
+                currentVideoIndex = 0
+                toCycleGetPic(context)
+            }
         }
+    }
 
+    /**
+     * 循环获取所有视频的帧图片
+     */
+    private var currentVideoIndex = 0
+    private fun toCycleGetPic(context: AppCompatActivity) {
+        val mediaData = tempData[currentVideoIndex]
+        val step = mediaData.duration!! / MAX_PIC
+        toGetPic(context, mediaData, step, mediaData.duration!!)
+    }
+
+    /**
+     * 获取视频帧图片
+     */
+    @SuppressLint("CheckResult")
+    private fun toGetPic(
+        context: AppCompatActivity,
+        mediaData: MediaData,
+        step: Long,
+        duration: Long
+    ) {
+        val currentTime =
+            if (step * picIndex > duration) duration * 1000 - 10 else step * picIndex * 1000
+        val options = RequestOptions()
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .frame(currentTime)
+            .centerCrop()
+        val target = object : SimpleTarget<Bitmap>() {
+            override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+                if (picIndex < MAX_PIC) {
+                    picBitmapLists.add(resource)
+                    mAdapter4Pic?.notifyItemChanged(picBitmapLists.size - 1)
+                    picIndex++
+                    toGetPic(context, mediaData, step, duration)
+                } else {
+                    picIndex = 0
+                    if (currentVideoIndex < tempData.size - 1) {
+                        currentVideoIndex++
+                        toCycleGetPic(context)
+                    } else {
+                        currentVideoIndex = 0
+                    }
+                }
+            }
+        }
+        Glide.with(context)
+            .setDefaultRequestOptions(options)
+            .asBitmap()
+            .load(mediaData.filePath)
+            .into(target)
     }
 
     /**

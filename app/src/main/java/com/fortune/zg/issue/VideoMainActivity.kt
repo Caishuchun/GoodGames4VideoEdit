@@ -351,7 +351,7 @@ class VideoMainActivity : BaseActivity() {
                     }
                 }
 
-                setDrawViewSize(drawView)
+                setDrawViewSize(drawView,containType)
                 drawView.canMove(true)
                 if (!mEditTextLists.isNullOrEmpty()) {
                     for (edit in mEditTextLists!!) {
@@ -449,8 +449,8 @@ class VideoMainActivity : BaseActivity() {
     /**
      * 设置drawView的大小
      */
-    private fun setDrawViewSize(drawView: DragView?) {
-        val maxImageArea = getMaxImageArea()
+    private fun setDrawViewSize(drawView: DragView?, containType: Int) {
+        val maxImageArea = getMaxImageArea(containType)
         val maxWidth = maxImageArea[0]
         val maxHeight = maxImageArea[1]
         LogUtils.d("======maxImageArea=>maxWidth:$maxWidth,maxHeight:$maxHeight")
@@ -463,10 +463,13 @@ class VideoMainActivity : BaseActivity() {
     /**
      * 获取图片集合最大的宽高区域
      */
-    private fun getMaxImageArea(): ArrayList<Int> {
+    private fun getMaxImageArea(containType: Int): ArrayList<Int> {
         val screenWidth = PhoneInfoUtils.getWidth(this)
         val screenHeight = PhoneInfoUtils.getHeight(this)
         LogUtils.d("======imageSize=>screenWidth:$screenWidth,screenHeight:$screenHeight")
+        if(containType==1){
+            return arrayListOf(screenWidth, screenHeight)
+        }
         var maxWidth = 0
         var maxHeight = 0
         for (data in selected) {
@@ -603,7 +606,7 @@ class VideoMainActivity : BaseActivity() {
                     val pages = et.getPages()
                     LogUtils.d("==============pages:${Gson().toJson(pages)}")
                     if (pages.contains(currentPicPosition)) {
-                        et.showOrHide(true)
+                        et.showOrHide(true,false)
                     } else {
                         et.showOrHide(false)
                     }

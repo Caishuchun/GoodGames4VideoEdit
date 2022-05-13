@@ -432,7 +432,7 @@
 
                 <com.fortune.zg.issue.CutVideoView
                     android:id="@+id/cutVideoView_selectText"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_76"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dp_4"

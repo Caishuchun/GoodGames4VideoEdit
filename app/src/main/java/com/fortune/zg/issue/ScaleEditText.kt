@@ -7,6 +7,8 @@ import android.util.TypedValue
 import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
+import android.widget.LinearLayout
+import com.fortune.zg.R
 import com.luck.picture.lib.tools.ScreenUtils
 
 class ScaleEditText : androidx.appcompat.widget.AppCompatEditText {
@@ -93,18 +95,31 @@ class ScaleEditText : androidx.appcompat.widget.AppCompatEditText {
         return false
     }
 
-    fun showOrHide(isShow: Boolean) {
+    fun showOrHide(isShow: Boolean, isShowSide: Boolean = true) {
         visibility = if (isShow) View.VISIBLE else View.GONE
+        mBg?.setBackgroundResource(if (isShowSide) R.drawable.bg_make_video_text else R.drawable.transparent)
         mMoveLayout?.visibility = if (isShow) View.VISIBLE else View.GONE
     }
 
+    /**
+     * 文本输入框的虚边
+     */
+    private var mBg: LinearLayout? = null
+    fun setBg(bg: LinearLayout) {
+        mBg = bg
+    }
+
+    /**
+     * 文本输入框的爹布局
+     */
     private var mMoveLayout: MoveLayout? = null
     fun setSelfMoveLayout(moveLayout: MoveLayout) {
         mMoveLayout = moveLayout
     }
 
-    fun getSelfMoveLayout() = mMoveLayout
-
+    /**
+     * 专属于图片集合的,表示该文本展示在第几张图片上
+     */
     private var pages = mutableListOf<Int>()
     fun setPage(page: Int) {
         if (pages.contains(page)) {
@@ -117,4 +132,19 @@ class ScaleEditText : androidx.appcompat.widget.AppCompatEditText {
 
     fun getPages() = pages
 
+    /**
+     * 专属于视频集合的,表示该文本展示的时间区间
+     * 0_0--0_3,1_3--1_6
+     */
+    private var intervals = mutableListOf<String>()
+    fun setInterval(interval: String) {
+        if (intervals.contains(interval)) {
+            intervals.remove(interval)
+        } else {
+            intervals.add(interval)
+        }
+        intervals.sort()
+    }
+
+    fun getIntervals() = intervals
 }

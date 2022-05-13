@@ -96,14 +96,14 @@ class MoveLayout : RelativeLayout {
     }
 
     private var canMove = true
-    fun isCanMove(isCanMove:Boolean){
+    fun isCanMove(isCanMove: Boolean) {
         canMove = isCanMove
     }
 
     private var firstClick = 0L
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        if(!canMove){
+        if (!canMove) {
             return true
         }
         when (event.action) {
@@ -132,7 +132,7 @@ class MoveLayout : RelativeLayout {
                 requestLayout()
                 mDeleteView!!.visibility = INVISIBLE
 
-                mListener4Moving?.moveEnd(false,identity)
+                mListener4Moving?.moveEnd(false, identity)
             }
             MotionEvent.ACTION_MOVE -> {
                 // Log.d(TAG, "onTouchEvent: move");
@@ -228,7 +228,7 @@ class MoveLayout : RelativeLayout {
                 mDeleteView!!.visibility = INVISIBLE
                 isInDeleteArea = true //this object is deleted ,only one-time-using
 
-                mListener4Moving?.moveEnd(true,identity)
+                mListener4Moving?.moveEnd(true, identity)
             }
         }
     }
@@ -387,8 +387,8 @@ class MoveLayout : RelativeLayout {
 
     interface MovingListener {
         fun moving()
-        fun moveEnd(isDelete: Boolean,identity:Int)
-        fun doubleClick(identity:Int)
+        fun moveEnd(isDelete: Boolean, identity: Int)
+        fun doubleClick(identity: Int)
     }
 
     private var mListener4Moving: MovingListener? = null

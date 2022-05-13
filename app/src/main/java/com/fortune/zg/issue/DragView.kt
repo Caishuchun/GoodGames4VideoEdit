@@ -158,6 +158,7 @@ class DragView : RelativeLayout, DeleteMoveLayout, MovingListener {
         if (whitebg) {
             val changeBg = dragSubView.findViewById<View>(R.id.change_bg) as LinearLayout
             changeBg.setBackgroundResource(R.drawable.bg_make_video_text)
+            (selfView as ScaleEditText).setBg(changeBg)
         }
         moveLayout.addView(dragSubView)
 
